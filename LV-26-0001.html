@@ -1,29 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Certificate Verification</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .header {
+    text-align: center;
+    padding: 40px 20px 10px;
+  }
+
+  .header img {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+
+  .header h2 {
+    margin: 0;
+    font-weight: 600;
+    color: #1f2a44;
+    letter-spacing: 0.5px;
+  }
+
+  .card {
+    margin-top: 30px;
+    background: #ffffff;
+    width: 90%;
+    max-width: 520px;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #1f2a44;
+    text-align: center;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 8px;
+    color: #fff;
+    background: #28c76f;
+  }
+
+  .info {
+    margin-top: 20px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .label {
+    font-weight: 600;
+    color: #555;
+  }
+
+  .value {
+    color: #222;
+  }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+  }
+</style>
+</head>
+
 <body>
 
-<div style="text-align:center; margin-bottom:20px;">
-
-    <img src="university-logo.png"
-         alt="University Logo"
-         width="160">
-
+  <div class="header">
+    <img src="university-logo.png" alt="University Logo - Mechanical Engineering Department">
     <h2>Department of Mechanical Engineering</h2>
+  </div>
 
-</div>
+  <div class="card">
+    <h1>
+      Certificate Verification
+      <span class="status">VALID</span>
+    </h1>
 
-<div class="card">
+    <div class="info">
+      <div class="row">
+        <div class="label">Certificate ID</div>
+        <div class="value">LV-2026-001</div>
+      </div>
 
-<h1>Certificate Verification</h1>
+      <div class="row">
+        <div class="label">Student</div>
+        <div class="value">Student 1</div>
+      </div>
 
-<p><strong>Certificate ID:</strong> LV-2026-001</p>
+      <div class="row">
+        <div class="label">Course</div>
+        <div class="value">Introduction to LabVIEW</div>
+      </div>
 
-<p><strong>Student:</strong> Student 1</p>
+      <div class="row">
+        <div class="label">Status</div>
+        <div class="value">VALID</div>
+      </div>
 
-<p><strong>Course:</strong> Introduction to LabVIEW</p>
+      <div class="row">
+        <div class="label">Date Issued</div>
+        <div class="value">June 1st, 2026</div>
+      </div>
+    </div>
 
-<p><strong>Status:</strong> VALID</p>
-
-<p><strong>Date Issued:</strong> June 1st, 2026</p>
-
-</div>
+    <div class="footer-note">
+      
+    </div>
+  </div>
 
 </body>
+</html>
