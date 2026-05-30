@@ -9,79 +9,117 @@
   body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+
+    /* softer near-white background */
+    background: linear-gradient(135deg, #f8f9fb, #eef1f5);
+    overflow-x: hidden;
+  }
+
+  /* subtle red glow to match logo */
+  body::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(220, 38, 38, 0.12);
+    filter: blur(120px);
+    top: -120px;
+    left: -120px;
+    z-index: 0;
   }
 
   .header {
     text-align: center;
     padding: 40px 20px 10px;
+    z-index: 1;
   }
 
   .header img {
-    width: 140px;
-    margin-bottom: 10px;
+    width: 120px;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));
   }
 
   .header h2 {
-    margin: 0;
-    font-weight: 600;
-    color: #1f2a44;
-    letter-spacing: 0.5px;
+    margin: 10px 0 0;
+    font-weight: 700;
+    color: #b91c1c; /* red tone */
+  }
+
+  .header h3 {
+    margin: 5px 0 0;
+    font-weight: 500;
+    color: #444;
   }
 
   .card {
     margin-top: 30px;
-    background: #ffffff;
     width: 90%;
-    max-width: 520px;
-    border-radius: 16px;
+    max-width: 540px;
     padding: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+
     position: relative;
+    z-index: 1;
+    color: #111;
     overflow: hidden;
   }
 
-  .card::before {
-    content: "";
+  /* faint watermark */
+  .card::after {
+    content: "VERIFIED";
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 6px;
-    width: 100%;
-    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    font-size: 80px;
+    font-weight: bold;
+    color: rgba(185, 28, 28, 0.05);
+    transform: rotate(-25deg);
+    top: 40%;
+    left: 10%;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 15px;
+    right: -40px;
+    background: #b91c1c;
+    color: white;
+    padding: 8px 50px;
+    transform: rotate(35deg);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 
   h1 {
-    margin-top: 0;
-    font-size: 22px;
-    color: #1f2a44;
     text-align: center;
+    margin-top: 0;
+    color: #111;
   }
 
   .status {
-    display: inline-block;
-    padding: 6px 12px;
+    background: #b91c1c;
+    padding: 4px 10px;
     border-radius: 20px;
-    font-weight: bold;
     font-size: 12px;
     margin-left: 8px;
-    color: #fff;
-    background: #28c76f;
-  }
-
-  .info {
-    margin-top: 20px;
+    color: white;
   }
 
   .row {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
 
   .label {
@@ -90,62 +128,54 @@
   }
 
   .value {
-    color: #222;
+    font-weight: 600;
+    color: #111;
   }
 
-  .footer-note {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #888;
-  }
 </style>
 </head>
 
 <body>
 
   <div class="header">
-    <img src="university-logo.png" alt="University Logo - Mechanical Engineering Department">
-    <h2>Department of Mechanical Engineering</h2>
+    <img src="university-logo.png" alt="University Logo">
+    <h2>College of Engineering</h2>
+    <h3>Department of Mechanical Engineering</h3>
   </div>
 
   <div class="card">
+    <div class="ribbon">OFFICIAL</div>
+
     <h1>
       Certificate Verification
       <span class="status">VALID</span>
     </h1>
 
-    <div class="info">
-      <div class="row">
-        <div class="label">Certificate ID</div>
-        <div class="value">LV-2026-001</div>
-      </div>
-
-      <div class="row">
-        <div class="label">Student</div>
-        <div class="value">Abedalrahman Ahmad Abughazaleh
-</div>
-      </div>
-
-      <div class="row">
-        <div class="label">Course</div>
-        <div class="value">Introduction to LabVIEW</div>
-      </div>
-
-      <div class="row">
-        <div class="label">Status</div>
-        <div class="value">VALID</div>
-      </div>
-
-      <div class="row">
-        <div class="label">Date Issued</div>
-        <div class="value">June 1st, 2026</div>
-      </div>
+    <div class="row">
+      <div class="label">Certificate ID</div>
+      <div class="value">LV-2026-002</div>
     </div>
 
-    <div class="footer-note">
-      
+    <div class="row">
+      <div class="label">Student</div>
+      <div class="value">Student 3</div>
     </div>
+
+    <div class="row">
+      <div class="label">Course</div>
+      <div class="value">Introduction to LabVIEW</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Status</div>
+      <div class="value">VALID</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Date Issued</div>
+      <div class="value">June 1st, 2026</div>
+    </div>
+
   </div>
 
 </body>
